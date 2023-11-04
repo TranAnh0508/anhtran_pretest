@@ -27,6 +27,6 @@ public class FileDownloaderPage extends GeneralPage{
         return linkCount;
     }
     public void clickOnRandomLink () {
-        int random =
+
     }
 }
