@@ -8,7 +8,6 @@ import java.io.File;
 
 public class FileUtils {
     private FileDownloaderPage fileLocal = new FileDownloaderPage();
-//    WebDriverWait wait = new WebDriverWait(Driver.driver, Constant.TIMES_OUT_SECONDS);
 
     public File getDownloadedFile(String fileName) {
         File file = new File("C:\\Users\\OS\\Downloads\\" + fileName);

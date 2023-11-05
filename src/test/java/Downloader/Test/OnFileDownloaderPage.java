@@ -54,7 +54,10 @@ public class OnFileDownloaderPage extends TestBase {
         //Download file nếu file đó chưa tồn tại trong local
         fileLocal = fileUtils.changFileIfExisted(fileLocal, index);
 
+        //Chờ file download thành công
         Thread.sleep(5000);
+
+        //Kiểm tra đúng file đã download
         System.out.println("2-File down về còn tồn tại ko: " + fileUtils.isFileExist(fileLocal));
         softAssert.assertTrue(fileUtils.isFileExist(fileLocal));
 
