@@ -3,10 +3,10 @@ package Downloader.Test;
 import Downloader.Common.FileUtils;
 import Downloader.Common.Log;
 import Downloader.Common.TestBase;
+import Downloader.Common.Utilities;
 import Downloader.Constant.Constant;
 import Downloader.Page.FileDownloaderPage;
 import Downloader.Page.HomePage;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -17,6 +17,7 @@ public class OnFileDownloaderPage extends TestBase {
     private HomePage homePage = new HomePage();
     private FileDownloaderPage fileDownloaderPage = new FileDownloaderPage();
     private FileUtils fileUtils = new FileUtils();
+    private Utilities utilities = new Utilities();
     private Log log = new Log();
     private int index;
     private File fileLocal;
@@ -36,7 +37,7 @@ public class OnFileDownloaderPage extends TestBase {
         softAssert.assertEquals(fileDownloaderPage.getSizeLinkDownloadable(), Constant.EXPECT_TOTAL);
 
         //Lấy chỉ số ngẫu nhiên cho list link
-        index = fileDownloaderPage.getRandomIndex(fileDownloaderPage.getSizeLinkDownloadable());
+        index = fileDownloaderPage.getRandomIndex();
         System.out.println("Original Index: " + index);
 
         //Xác định tên của file được download
@@ -55,7 +56,7 @@ public class OnFileDownloaderPage extends TestBase {
         fileLocal = fileUtils.changFileIfExisted(fileLocal, index);
 
         //Chờ file download thành công
-        Thread.sleep(5000);
+        utilities.waitForFile(fileLocal);
 
         //Kiểm tra đúng file đã download
         System.out.println("2-File down về còn tồn tại ko: " + fileUtils.isFileExist(fileLocal));

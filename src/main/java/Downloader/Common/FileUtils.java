@@ -28,13 +28,11 @@ public class FileUtils {
     public File changFileIfExisted(File file, int index) {
         if (isFileExist(file) == true) {
             System.out.println("File:" + file + " is exist!");
-            int newIndex = fileLocal.getRandomIndex(fileLocal.getSizeLinkDownloadable());
-            System.out.println(newIndex);
+            int newIndex = fileLocal.getRandomIndex();
             fileLocal.clickOnRandomLink(newIndex);
             return getDownloadedFile(fileLocal.getLinkDownloadableName(newIndex));
         } {
             fileLocal.clickOnRandomLink(index);
-            System.out.println(index);
             return file;
         }
     }

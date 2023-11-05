@@ -29,10 +29,10 @@ public class FileDownloaderPage extends GeneralPage{
         int linkCount = Driver.driver.findElements(linkDownloadableLoc).size();
         return linkCount;
     }
-
-    public int getRandomIndex(int index){
+    //public int getRandomIndex(int index)
+    public int getRandomIndex(){
         Random r = new Random();
-        int randomValue = r.nextInt(index);
+        int randomValue = r.nextInt(getSizeLinkDownloadable());
         return randomValue;
     }
 
