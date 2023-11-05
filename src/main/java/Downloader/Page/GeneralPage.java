@@ -11,9 +11,4 @@ public class GeneralPage {
     //Elements
 
     //Methods
-    public void scrollscreen(WebElement webElement) {
-        Actions action = new Actions(Driver.driver);
-        action.moveToElement(webElement).click().build().perform();
-    }
-
 }
