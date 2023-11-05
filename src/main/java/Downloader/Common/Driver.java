@@ -1,7 +1,6 @@
 package Downloader.Common;
 
 import Downloader.Constant.Constant;
-import org.apache.logging.log4j.core.appender.rolling.action.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 

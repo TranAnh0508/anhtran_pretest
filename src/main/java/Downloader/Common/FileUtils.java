@@ -1,8 +1,6 @@
 package Downloader.Common;
 
-import Downloader.Constant.Constant;
 import Downloader.Page.FileDownloaderPage;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 

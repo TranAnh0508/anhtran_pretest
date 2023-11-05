@@ -1,8 +1,5 @@
 package Downloader.Constant;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 public class Constant {
     public static final String HEROKUAPP_URL = "https://the-internet.herokuapp.com/";
     public static final int TIMES_OUT_SECONDS = 20;

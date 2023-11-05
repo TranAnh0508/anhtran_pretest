@@ -24,17 +24,18 @@ public class OnFileDownloaderPage extends TestBase {
 
     @Test (description = "Verify that user is on File Downloader Page")
     public void tc01_VerifyUserCanGotoDownloadPageSuccessfully () throws InterruptedException {
-        log.info("1. Go to HEROKUAPP");
+        log.info("Go to HEROKUAPP");
         softAssert.assertEquals(homePage.getHomePageTitle(), Constant.HOME_PAGE_TITLE);
 
-        log.info("2. Go to Downloag Page");
+        log.info("Go to Downloag Page");
         homePage.goToFileDownloaderPage();
 
-        log.info("3. Verify the user is on Download Page");
+        log.info("Verify the user is on Download Page");
         softAssert.assertEquals(fileDownloaderPage.getFileDownloaderPageTitle(), Constant.DOWNLOAD_PAGE_TITLE);
 
-        log.info("4. Counts the download links");
+        log.info("Counts the download links");
         softAssert.assertEquals(fileDownloaderPage.getSizeLinkDownloadable(), Constant.EXPECT_TOTAL);
+        System.out.println("Total of links downloadable: " + fileDownloaderPage.getSizeLinkDownloadable());
 
         //Lấy chỉ số ngẫu nhiên cho list link
         index = fileDownloaderPage.getRandomIndex();

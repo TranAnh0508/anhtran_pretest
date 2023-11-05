@@ -19,11 +19,6 @@ public class Utilities {
         action.moveToElement(webElement).click().build().perform();
     }
 
-    public void waitToFile(File filePath) {
-        WebDriverWait wait = new WebDriverWait(Driver.driver, Constant.TIMES_OUT_SECONDS);
-        wait.equals(filePath);
-    }
-
     public void waitForFile(File file) {
         while (fileUtils.isFileExist(file)==false) {
         }
