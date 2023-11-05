@@ -8,4 +8,9 @@ public class Utilities {
         Actions action = new Actions(Driver.driver);
         action.moveToElement(webElement).click().build().perform();
     }
+
+    public void waitToFile() {
+
+    }
+
 }

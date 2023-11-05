@@ -26,7 +26,7 @@ public class OnFileDownloaderPage extends TestBase {
         log.info("1. Go to HEROKUAPP");
         softAssert.assertEquals(homePage.getHomePageTitle(), Constant.HOME_PAGE_TITLE);
 
-        log.info("1. Go to Downloag Page");
+        log.info("2. Go to Downloag Page");
         homePage.goToFileDownloaderPage();
 
         log.info("3. Verify the user is on Download Page");
@@ -41,25 +41,25 @@ public class OnFileDownloaderPage extends TestBase {
 
         //Xác định tên của file được download
         String nameFile = fileDownloaderPage.getLinkDownloadableName(index);
-        System.out.println(nameFile);
+        System.out.println("File name: " + nameFile);
 
-        //Xác định địa chỉ local của downloaded file
+        //Xác định địa chỉ local của file được download
         fileLocal = fileUtils.getDownloadedFile(nameFile);
 
         //Kiểm tra file có tồn tại ko
         fileUtils.isFileExist(fileLocal);
         softAssert.assertTrue(fileUtils.isFileExist(fileLocal));
-        System.out.println("1. File down về còn tồn tại ko: " + fileUtils.isFileExist(fileLocal));
+        System.out.println("1-File down về còn tồn tại ko: " + fileUtils.isFileExist(fileLocal));
 
-        //Download file chưa tồn tại
+        //Download file nếu file đó chưa tồn tại trong local
         fileLocal = fileUtils.changFileIfExisted(fileLocal, index);
 
         Thread.sleep(5000);
-        System.out.println("2. File down về còn tồn tại ko: " + fileUtils.isFileExist(fileLocal));
+        System.out.println("2-File down về còn tồn tại ko: " + fileUtils.isFileExist(fileLocal));
         softAssert.assertTrue(fileUtils.isFileExist(fileLocal));
 
         //Xóa file đã download
         fileUtils.delFile(fileLocal);
-        System.out.println("3. File down về còn tồn tại ko: " + fileUtils.isFileExist(fileLocal));
+        System.out.println("3-File down về còn tồn tại ko: " + fileUtils.isFileExist(fileLocal));
     }
 }

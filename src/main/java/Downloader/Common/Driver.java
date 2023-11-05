@@ -11,7 +11,7 @@ public class Driver {
     public static WebDriver driver;
 
     public void open() {
-        System.setProperty("webdriver.chrome.driver","E:\\Logigear\\Selenium\\TranDinhTruongAnh_8283\\src\\main\\java\\Executables\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","E:\\Logigear\\Selenium\\TranDinhTruongAnh_8283\\src\\main\\java\\Executables\\chromedriver_v119.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(Constant.HEROKUAPP_URL);

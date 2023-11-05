@@ -3,7 +3,7 @@
 <suite name="Downloader" verbose="1">
     <test name="ChromeTest">
         <classes>
-            <class name="Downloader.Test.OnFileDownloaderPage" />
+            <class name="Downloader.Test.OnFileDownloaderPage"/>
         </classes>
     </test>
 </suite>
